@@ -42,8 +42,7 @@ class Formulae {
   // temperature
   // convert to SI unit {kelvin}
   static cToK = x => {
-    let result = x + 273.15;
-    return Number(Number(result).toFixed(2));
+    return Number(Number(x + 273.15).toFixed(2));
   };
   static fToK = x => {
     let result = (x - 32) * (5/9) + 273.15;
@@ -55,7 +54,7 @@ class Formulae {
     return Number(Number(result).toFixed(2));
   };
   static kToF = x => {
-    let result = (x - 273.15) * (9/5) + 32
+    let result = (x - 273.15) * (9/5) + 32;
     return Number(Number(result).toFixed(2));
   };
 }
@@ -213,12 +212,12 @@ function addUnits(type) {
         inputBar[6].value = `${Formulae.mToFoot(number)}`;
       break;
       case "celsius" :
-        number = Formulae.cToK(e.target.value);
+        number = Formulae.cToK(Number(e.target.value));
         inputBar[1].value = `${Formulae.kToF(number)}`;
         inputBar[2].value = `${number}`;
       break;
       case "fahrenheit" :
-        number = Formulae.fToK(e.target.value);
+        number = Formulae.fToK(Number(e.target.value));
         inputBar[0].value = `${Formulae.kToC(number)}`;
         inputBar[2].value = `${number}`;
       break;
