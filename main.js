@@ -85,6 +85,7 @@ function addUnits(type) {
     div.className = "row";
 
     let label = document.createElement("label");
+    label.className = "label-style";
     label.setAttribute("for", `${unit}`);
     label.textContent = `${unit[0].toUpperCase() + unit.slice(1)}:`;
 
